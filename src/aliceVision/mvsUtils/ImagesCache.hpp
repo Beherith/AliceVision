@@ -76,15 +76,11 @@ private:
     std::vector<std::string> imagesNames;
 
     const int  bandType;
-public:
-    const bool transposed;
 
 public:
-    ImagesCache( const MultiViewParams* _mp, int _bandType,
-                 bool _transposed = false);
-    ImagesCache( const MultiViewParams* _mp, int _bandType, std::vector<std::string>& _imagesNames,
-                 bool _transposed = false);
-    void initIC( std::vector<std::string>& _imagesNames );
+    ImagesCache(const MultiViewParams* _mp, int _bandType);
+    ImagesCache(const MultiViewParams* _mp, int _bandType, std::vector<std::string>& _imagesNames);
+    void initIC(std::vector<std::string>& _imagesNames);
     ~ImagesCache();
 
     inline ImgPtr getImg_sync( int camId )
